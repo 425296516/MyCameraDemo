@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true"
+        android:drawable="@drawable/user_shape_btn_2_pressed" />
+    <item android:drawable="@drawable/user_shape_btn_2"/>
+    <item android:drawable="@drawable/user_shape_btn_2_disable"/>
+
+</selector>
+<!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/drawable/user_drw_btn_2.xml -->

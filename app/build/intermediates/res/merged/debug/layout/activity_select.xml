@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.chenww.camera.ui.SelectActivity">
+
+
+    <Button
+        android:id="@+id/tv_beijing_qian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="北京（在拍照时使用前置摄像头）" />
+
+    <Button
+        android:id="@+id/tv_nanjing_qian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="南京（在拍照时使用前置摄像头）" />
+
+    <Button
+        android:id="@+id/tv_beijing_hou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="北京（在拍照时使用后置摄像头）" />
+
+    <Button
+        android:id="@+id/tv_nanjing_hou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="南京（在拍照时使用后置摄像头）" />
+
+</LinearLayout>
+<!-- From: file:/Users/zhangcirui/myproject/MyCameraDemo/app/src/main/res/layout/activity_select.xml -->

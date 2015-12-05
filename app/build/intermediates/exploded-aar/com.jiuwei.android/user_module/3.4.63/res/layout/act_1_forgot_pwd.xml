@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_1_forgot_pwd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!--帐号-->
+    <RelativeLayout
+        android:layout_width="305dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/drw_1_juxing_white">
+
+        <com.aigo.usermodule.ui.view.ClearEditText
+            android:id="@+id/et_1_old_email"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="9dip"
+            android:background="@null"
+            android:drawableRight="@drawable/drw_1_clear"
+            android:hint="@string/please_input_correct_email_or_phone_number"
+            android:singleLine="true"
+            android:textColor="@color/drw_1_forgot_text_click_selector"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_1_forgot_pwd_first"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="18dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/btn_1_forgot_pwd_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/user_drw_btn_1"
+            android:onClick="onNextClick"
+            android:padding="0dp"
+            android:text="确认"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_1_forgot_pwd_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible">
+        <!--验证码-->
+        <LinearLayout
+            android:layout_width="305dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="183dp"
+                android:layout_height="37dp"
+                android:background="@drawable/drw_1_juxing_white">
+
+                <EditText
+                    android:id="@+id/et_1_enter_verification_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@null"
+                    android:hint="输入验证码"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:textColor="@color/drw_1_forgot_text_click_selector"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <com.aigo.usermodule.ui.view.DelayButton
+                android:id="@+id/btn_1_get_verification_code"
+                android:layout_width="112dp"
+                android:layout_height="37dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/drw_1_verification_code_button"
+                android:onClick="onGetVerifyCodeClick"
+                android:text="获取验证码"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--新密码-->
+        <RelativeLayout
+            android:layout_width="305dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/drw_1_juxing_white">
+
+            <com.aigo.usermodule.ui.view.ClearEditText
+                android:id="@+id/et_1_new_pwd"
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="9dip"
+                android:background="@null"
+                android:digits="@string/pwd_input_digits"
+                android:drawableRight="@drawable/drw_1_clear"
+                android:hint="请输入6到16位新密码"
+                android:password="true"
+                android:singleLine="true"
+                android:textColor="@color/drw_1_forgot_text_click_selector"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/iv_1_visible_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="34dp"
+                android:button="@drawable/drw_1_checkbox_eye"
+                android:onClick="setViewVisible"
+                android:src="@drawable/drw_1_passwords_visible_open"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="306dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_1_ok"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/user_drw_btn_1"
+                android:onClick="onConfirmClick"
+                android:padding="0dp"
+                android:text="确认"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+<!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/layout/act_1_forgot_pwd.xml -->

@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyCamera" >
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_launcher"
+        android:scaleType="fitXY"
+        />
+
+    <SurfaceView
+        android:id="@+id/camera_surfaceview"
+
+        android:layout_width="1dp"
+        android:layout_height="1dp" >
+    </SurfaceView>
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="40dp"
+        android:background="#44333333"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:text="北京"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#44333333"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:maxEms="6"
+        android:gravity="center"
+        android:text="12月4日16点50分33秒"
+        />
+
+
+
+    <Button
+        android:id="@+id/btn_shutter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="开始"
+        android:background="@drawable/btn_shutter_background" />
+
+
+</RelativeLayout>

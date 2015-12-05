@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="actionbar_bg_transparent">#19f7f7f7</color>
+    <color name="activity_bg">#f0f0f0</color>
+    <color name="app_color">#ffff2d3b</color>
+    <color name="apptheme_color">#ff5c00</color>
+    <color name="black">#000000</color>
+    <color name="body_info_for_ground">#50f7f7f7</color>
+    <color name="border_color">#ffffff</color>
+    <color name="c_zero">#c04601</color>
+    <color name="color_515151">#515151</color>
+    <color name="color_808080">#808080</color>
+    <color name="color_858585">#858585</color>
+    <color name="color_a0a0a0">#a0a0a0</color>
+    <color name="color_a2424a">#a2424a</color>
+    <color name="color_b8251e">#b8251e</color>
+    <color name="color_d03e37">#d03e37</color>
+    <color name="color_ed463e">#ed463e</color>
+    <color name="color_ee635d">#ee635d</color>
+    <color name="color_fff3ed">#fff3ed</color>
+    <color name="comming">#60ba00</color>
+    <color name="d_seven">#d7d7d7</color>
+    <color name="e_five">#e5e5e5</color>
+    <color name="eight_f">#8f8f8f</color>
+    <color name="f_b">#fbfbfb</color>
+    <color name="finished">#8e8e8e</color>
+    <color name="following_bg">#f0f0f0</color>
+    <color name="gender_color">#9e9e9e</color>
+    <color name="gonging">#ff5c00</color>
+    <color name="gray_line">#cacaca</color>
+    <color name="lable_color">#262626</color>
+    <color name="left_menu_selected">#323436</color>
+    <color name="login_bg">#f7f7f7</color>
+    <color name="menu_text">#dfdfdf</color>
+    <color name="one_b">#1b1b1b</color>
+    <color name="one_b_f">#1b1d1f</color>
+    <color name="pause">#828181</color>
+    <color name="register_forgotpwd_text_color">#ff5c00</color>
+    <color name="select_color">#eae8e9</color>
+    <color name="sixsix">#666666</color>
+    <color name="text_bg">#55000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="user_color_actionbar_color">#000000</color>
+    <color name="user_color_actionbar_title_color">#ffffff</color>
+    <color name="user_color_btn_1">#ff6511</color>
+    <color name="user_color_btn_1_disable">#cccccc</color>
+    <color name="user_color_btn_1_pressed">#e45200</color>
+    <color name="user_color_btn_2">#3a618c</color>
+    <color name="user_color_btn_2_disable">#cccccc</color>
+    <color name="user_color_btn_2_pressed">#4d83be</color>
+    <color name="user_color_text_1">#4d83be</color>
+    <color name="user_color_text_1_pressed">#3a618c</color>
+    <color name="user_color_text_i_have_agree">#797979</color>
+    <color name="user_drw_text_login_platform_normal">#333333</color>
+    <color name="user_drw_text_login_platform_pressed">#ff9c2c</color>
+    <color name="white">#ffffff</color>
+    <!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="user_btn_corner_radius_1">8dp</dimen>
+    <!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <drawable name="actionbar_bg_orange">#ff5c00</drawable>
+    <drawable name="actionbar_bg_pink">#ed463e</drawable>
+    <drawable name="actionbar_bg_white">#ffffff</drawable>
+    <drawable name="actionbar_shadow_slid">#ff5c00</drawable>
+    <drawable name="actionbar_transparent">#00000000</drawable>
+    <drawable name="bg_item_normal">#ffffff</drawable>
+    <drawable name="bg_item_press">#dddddd</drawable>
+    <drawable name="color_008dc2">#008dc2</drawable>
+    <drawable name="color_white">#fff</drawable>
+    <drawable name="drw_1_rectangle_green_sawtooth_l">@drawable/drw_1_rectangle_green_sawtooth_left</drawable>
+    <drawable name="drw_1_rectangle_green_sawtooth_r">@drawable/drw_1_rectangle_green_sawtooth_right</drawable>
+    <drawable name="drw_1_sex_select_color">@drawable/drw_1_sex_select</drawable>
+    <drawable name="drw_1_sex_select_man_color">@drawable/drw_1_sex_select_man</drawable>
+    <drawable name="drw_1_sex_select_woman_color">@drawable/drw_1_sex_select_woman</drawable>
+    <drawable name="drw_2_sex_select_color">@drawable/drw_1_sex_select</drawable>
+    <!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <string name="actionbar_register">注册</string>
+    <string name="age">年龄</string>
+    <string name="aigo_clause_statement">《aigo产品最终使用条款》</string>
+    <string name="app_name">UserModule</string>
+    <string name="boy">男</string>
+    <string name="btn_login_qq_text">QQ登录</string>
+    <string name="btn_login_weibo_text">微博登录</string>
+    <string name="cancel">取消</string>
+    <string name="complete">完成</string>
+    <string name="complete_user_info">完善信息</string>
+    <string name="confirm">确定</string>
+    <string name="find_password">找回密码</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="get_verify_code">获取验证码</string>
+    <string name="girl">女</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hint_login">邮箱/手机号</string>
+    <string name="i_have_agree">我已同意</string>
+    <string name="i_have_read_aigo_clause_statement">我已经阅读《aigo移动应用最终用户使用条款》</string>
+    <string name="input_verify_code">输入验证码</string>
+    <string name="login">登录</string>
+    <string name="login_cancel">登录取消</string>
+    <string name="login_fail">登录失败</string>
+    <string name="login_in_below_way">----------------使用以下方式登录----------------</string>
+    <string name="login_qq">QQ</string>
+    <string name="login_qq_success">QQ登录成功</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_wei_bo">微博</string>
+    <string name="login_wei_bo_success">微博登录成功</string>
+    <string name="logout">注销</string>
+    <string name="next_step">下一步</string>
+    <string name="nickname">昵称</string>
+    <string name="nickname_can_not_null">昵称不能为空</string>
+    <string name="nickname_can_not_too_long">长度不超过8个汉字或16个字符</string>
+    <string name="nickname_is_exist">昵称已经存在</string>
+    <string name="please_get_verify_code_first">请先获取验证码</string>
+    <string name="please_input_correct_email_or_phone_number">请输入有效的邮箱或手机号</string>
+    <string name="please_input_correct_verify_code">请输入正确的验证码</string>
+    <string name="please_input_new_password">请输入新密码</string>
+    <string name="please_input_old_password">请输入旧密码</string>
+    <string name="please_input_password">请输入密码</string>
+    <string name="please_input_password_morn_than_six">请输入6到16位密码</string>
+    <string name="please_input_your_email_or_phone_number">请填写您的注册邮箱或手机号码</string>
+    <string name="pwd_input_digits">0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z</string>
+    <string name="register">注册</string>
+    <string name="select_age">选择年龄</string>
+    <string name="sex">性别</string>
+    <string name="skip">跳过</string>
+    <string name="tip_register_please_input_correct_password">密码长度为6到16位</string>
+    <string name="tip_register_register_fail">注册失败</string>
+    <string name="tip_register_register_success">注册成功</string>
+    <string name="tv_1_register_validation">注册</string>
+    <string name="tv_complete_user_info_nickname">昵称</string>
+    <string name="update_password">修改密码</string>
+    <string name="update_user_info">修改信息</string>
+    <string name="user_center">用户中心</string>
+    <string name="user_protocol">爱国者电子移动应用软件最终用户许可协议 请务必仔细阅读和理解此爱国者移动应用软件最终用户许可协议（“本《协议》”）中规定的所有权利和限制。 虽有本《协议》下述各项约定，但您知悉并认可，在您未能以下述任一方式获得本“软件”的合法使用授权前，即便您已阅读并同意接受本《协议》各项条款的约束，您依然无权将本“软件”在您的Android操作系统智能终端上使用，或以其他任何方式使用本“软件”：\n（1）从爱国者（本协议凡提及“爱国者”均仅指爱国者电子有限公司）直接获得本“软件”的合法使用授权；\n（2）从有权进行转授权的第三方处获得本“软件”的合法使用授权。  在使用本“软件”前，您需要仔细阅读并决定接受或不接受本《协议》的条款。除非或直至您接受本《协议》的条款，否则您不得在您的Android操作系统智能终端上使用本“软件”。同时您在使用本“软件”时还需同时遵守您为获得本“软件”的合法授权而与爱国者电子签订的其他协议（如有）中的全部条款和条件。\n
+作为参考，您现在就可以从本页起打印或本地保存本《协议》的文本。\n
+本《协议》是您与爱国者电子之间有关本“软件”的法律协议。本“软件”包括随附的Android操作系统智能终端软件，并可能包括相关文档印刷材料。您一旦使用本“软件”，即表示您同意接受本《协议》各项条款的约束。如您不同意本《协议》中的条款，您则不可以使用本“软件”，并应立即卸载本“软件”。\n
+本“软件”受著作权法及国际著作权条约和其它知识产权法和条约的保护。本“软件”权利只许可使用，而不出售。\n
+一．在您接受本《协议》各项条款约束的前提下，爱国者电子将本“软件”在全球范围内的非专有的使用权授予您。您可以：\n
+1.	在一台Android操作系统智能终端上安装、使用、显示、运行（“运行”）本“软件” 的一份副本。\n
+2.	通过合法方式在全球范围内分发本“软件”，但您同意在您分发本“软件”时必须同时遵守本款下述全部约定：\n
+仅能按爱国者电子提供的本“软件”现状分发本“软件”，且分发的本“软件”仅能为爱国者电子提供的完整的（包括但不限于包含本《协议》全部内容）包含所有版权标识的未作任何修改的本“软件”；  您不得对本《协议》进行任何内容或形式的修改，您需保证经您分发获得本“软件”的最终用户均在同意接受本《协议》各项条款的约束后方可安装、使用本“软件”；  本款上述约定如与本《协议》其他条款约定不一致或在实际执行过程中与本《协议》其他条款出现冲突，均仅以本款上述约定为准。\n
+二．您保证：\n
+1.	不在本《协议》规定的条款之外，使用、修改本“软件”或其中的任一部分。\n
+2.	不得对本“软件”进行反向工程、反向编译或反汇编；不得试图进行任何获得本“软件”原代码的访问或行为。\n
+3.	不得以任何方式销售本“软件”或利用本“软件”收取费用或变相收取费用。\n
+4.	在本“软件”的所有副本上包含所有的版权标识。\n
+三．支持服务\n
+1.	如在本“软件”附随用户手册或其它材料中，爱国者电子明示将为您提供支持服务，则爱国者电子将依照该用户手册或其它材料中所述的各项政策和计划为您提供与本“软件”有关的支持服务（“支持服务”）。\n
+2.	提供给您作为支持服务的一部分的任何附加软件代码（如有）应被视为本“软件”的一部分，并须遵照本《协议》中的各项条款。\n
+3.	您明示同意，爱国者电子可将您提供给爱国者电子作为支持服务的一部分的技术信息（如有）用于商业用途，包括产品支持和开发。除了在为您提供支持服务时必须的情况外，爱国者电子在使用这些技术信息时不会以个人形式提及您。\n
+四．软件的替换、修改和升级\n
+1.	爱国者电子保留在任何时候通过提前向您公告（包括但不限于客户端弹出页面、本“软件”官方网站（mo.wps.cn）、您提供的邮件地址）的方式为您提供本“软件”的新版本（指本“软件”的替换版本或修改版本或升级版本，视情况而定）以替换、修改或升级本“软件”的权利和为这类替换、修改或升级收取费用的权利。因特殊原因（特殊原因包括但不限于：您提供的电子邮箱失效、您的邮箱设有邮件过滤、邮件拦截功能等）导致您的电子邮件无法成功收到爱国者电子向您所提供的电子邮箱发送的公告，爱国者电子对此不承担任何责任。该公告所述内容将于公告载明的该内容的生效日期生效，如若公告未载明公告所述内容的生效日期，公告中所述内容将于公告发送或公布之日生效。\n
+2.	您可自行选择接受（包括您设定对本“软件”自动升级的各种情况）爱国者电子为您提供的本“软件”的新版本以替换、修改或升级本“软件”。但您在此知悉并认可本“软件”新版本发布后，爱国者电子不保证旧版本（指新版本发布之前的版本）继续可用。爱国者电子保留因业务发展需要，单方面对本“软件”的部分功能效果进行改变或进行限制，您应承担与此相关的风险。\n
+3.	爱国者电子提供给您的本“软件”的任何替换版本或修改软件代码或升级版本，将被视为本“软件”的一部分并且要受到本《协议》条款的制约（除非本《协议》被随附本“软件”的替换或修改版本或升级版本的另外一份协议取代）。\n
+4.	如果爱国者电子提供本“软件”的一个替换或修改版本或任何升级版本，则（a）您对本“软件”替换或修改版本或任何升级版本的使用条件是您接受本“软件”的这类替换或修改版本或升级版本以及任何随附的取代协议(如有)，并且（b）您对本“软件”的所有先前版本的使用将被终止。\n
+五．现有免费功能及收费\n
+1.	您知悉并认可，尽管爱国者电子现免费向您提供本“软件”的现有功能（简称“现有免费功能”），但爱国者电子有可能就本“软件”的一个替换或修改版本或任何升级版本的任何新增、附加功能的全部或部分（简称“收费功能”）向您收取费用，具体资费政策以爱国者电子届时公布内容为准，届时您可自行选择是否接受爱国者电子提供的本“软件”的收费功能，如您选择接受，则您应按照爱国者电子届时制定的收费政策支付相关费用。如果爱国者电子针对本“软件”的任何收费功能有任何随附的协议或条款，则您在选择接受该收费功能时，需先行同意此等协议或条款，且此等协议或条款将视为对本《协议》内容之补充，如有冲突，此等协议或条款将优先适用。\n
+六．权利的保留： 本《协议》未明示授予的一切权利均为爱国者电子所有。\n
+七．本"软件"的著作权\n
+1.	您不得去掉本“软件”上的任何版权标识，并应在其所有复制品上依照其现有表述方式标注其版权属于爱国者电子。\n
+2.	本“软件”（包括但不限于本“软件”中所含的任何图像、照片、动画、录像、录音、音乐、文字和附加程序）、随附的印刷材料及本“软件”任何副本的著作权，均由爱国者电子拥有。\n
+3.	本“软件”及文档享有版权，并受国家版权法及国际协约条款的保护。\n
+4.	您不可以从本“软件”中去掉其版权声明；并保证为本“软件”的复制品（全部或部分）复制版权声明。\n
+5.	您同意制止以任何形式非法复制本“软件”及文档。\n
+6.	您不可复制本“软件”随附的印刷材料。\n
+八．出口限制 本“软件”受中国出口法律和法规管辖。您必须遵守适用于本“软件”的所有国内和国际出口法律和法规。这些法律包括对目的地、最终用户和最终用途的各种限制。\n
+九．不允诺担保 本《协议》所述明示担保，为担保的全部内容。在适用法律所允许的最大范围内，爱国者电子及其供应商提供的本“软件”和支持服务（如有）均为按现状及包含所有瑕疵状况下提供，不允诺其它不论是明示的、暗示的还是法定的任何保证和担保：包括但不限于本“软件”对特殊应用目的适销性或适应性，反应的精确性，结果的完整性，不含病毒及疏忽，针对本“软件”提供或不提供支持服务。\n
+十．责任有限： 在适用法律所允许的最大范围内，爱国者电子或其供应商绝不就因使用或不能使用本“软件”所引起的或有关的任何间接的、意外的、直接的、特殊的、惩罚性的或其它任何损害（包括但不限于因人身伤害或财产损坏而造成的损害，因利润损失、数据损失、营业中断、Android操作系统智能终端瘫痪或故障、商业信息的遗失而造成的损害，因未能履行包括诚信或相当注意在内的任何责任致使隐私泄露而造成的损害，因疏忽而造成的损害，或因任何金钱上的损失或任何其它损失而造成的损害）承担赔偿责任，即使爱国者电子或其任何供应商事先被告知该损害发生的可能性。即使补救措施未能达到预定目的，本损害赔偿排除条款将仍然有效。不论何种情况，爱国者电子及其供应商在本《协议》任何条款下所承担的全部责任，以您获得本《协议》约定之本“软件”授权而支付的合理款项（如有）为限，但如您系免费获得本“软件”，则爱国者电子及其供应商无义务承担任何责任或向您支付任何赔偿。同时，爱国者电子对您或第三方提供的应用于或操作于本“软件”的内容或与该内容相关的其他内容而引起的任何索赔或损害不承担任何责任。\n
+十一．许可终止：\n
+1.	如您未遵守本《协议》的各项条款和条件，爱国者电子可终止本《协议》。终止本《协议》时，您必须立即销毁本“软件”的所有复制品，或者将其归还给爱国者电子。\n
+2.	通过向您提供本“软件”的任何替换或修改版本或升级版本的一份取代协议，并规定您使用这类替换、修改或升级版本的条件是您接受这类取代协议，爱国者电子可以终止本《协议》。\n
+十二．适用、管辖法律： 本《协议》的订立、执行和解释及争议的解决均应适用中华人民共和国法律。  如您与爱国者电子就本《协议》内容或其执行发生任何争议，双方应进行友好协商；协商不成时，任何一方均可向爱国者电子所在地有管辖权的人民法院提起诉讼。\n
+十三．特别提示： 为了不断提高本“软件”和服务的质量，爱国者电子将在征得您的同意后搜集您对本“软件”进行使用的信息，并不定期地予以反馈。  爱国者电子不会搜集您的姓名、地址、联系方式等个人信息以及文件内容等涉及信息安全的信息。  以上搜集的信息仅仅为了市场分析需要，以便爱国者电子今后能够为您提供更好的功能和服务，爱国者电子对此数据严格保密。  本条所指搜集信息的范围以爱国者电子适时的技术水平为判断标准。爱国者电子将尽最大努力力求判断的准确性，但因受到现实技术水平等的限制，爱国者电子仅依照自有的判断能力进行甄别收集。您已明确知悉上述内容，且认可爱国者电子的操作，愿意承担因此而可能造成的损失。\n
+至此，您肯定已经详细阅读并已理解本协议，并同意严格遵守各条款和条件。\n
+\r\n\r\n</string>
+    <string name="username">用户名</string>
+    <string name="xiugaimima">修改密码</string>
+    <string name="xiugaixinxi">修改信息</string>
+    <string name="yonghudenglu">用户登录</string>
+    <string name="zhaohuimima">找回密码</string>
+    <!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="CustumDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="UserTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/UserTheme.ActionBar</item>
+    </style>
+    <style name="UserTheme.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/user_color_actionbar_color</item>
+        <item name="android:titleTextStyle">@style/UserTheme.ActionBar.TitleTextStyle</item>
+    </style>
+    <style name="UserTheme.ActionBar.TitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/user_color_actionbar_title_color</item>
+    </style>
+</resources>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_1_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="27dp"
+        android:background="#f0f0f0"
+        android:orientation="vertical">
+
+        <!--头像-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_1_user_info_head"
+                app:border_width="2dp"
+                app:border_color="@color/border_color"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/drw_1_touxiang" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="点击修改"
+                android:textColor="#797979"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <!--昵称-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
+                android:text="昵称"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="255dp"
+                android:layout_height="37dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/drw_1_juxing_white"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <com.aigo.usermodule.ui.view.ClearEditText
+                    android:id="@+id/et_1_user_info_nickname"
+                    android:layout_width="231dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="9dip"
+                    android:background="@null"
+                    android:drawableRight="@drawable/drw_1_clear"
+                    android:hint="@string/nickname_can_not_too_long"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/drw_1_forgot_text_click_selector"
+                    android:textSize="14sp" />
+                <!--<EditText-->
+                <!--android:id="@+id/et_1_user_info_nickname"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:background="@null"-->
+                <!--android:singleLine="true"-->
+                <!--android:maxLength="16"-->
+                <!--android:hint="中英文数字均可"-->
+                <!--android:textSize="15sp" />-->
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--性别-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
+                android:text="性别"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/drw_1_sex_unselect"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rl_1_user_info_man"
+                    android:layout_width="128dp"
+                    android:layout_height="47dp"
+                    android:background="@drawable/drw_1_juxing_white">
+
+                    <TextView
+                        android:id="@+id/rb_1_user_info_man"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:clickable="true"
+                        android:text="男"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/rb_1_user_info_man"
+                        android:src="@drawable/drw_1_sex_select_man_color" />
+
+                    <ImageView
+                        android:id="@+id/iv_1_user_info_man"
+                        android:layout_width="128dp"
+                        android:layout_height="47dp"
+                        android:background="@drawable/drw_1_sex_select_color"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_1_user_info_woman"
+                    android:layout_width="128dp"
+                    android:layout_height="47dp"
+                    android:background="@drawable/drw_1_juxing_white">
+
+                    <TextView
+                        android:id="@+id/rb_1_user_info_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:clickable="true"
+                        android:text="女"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/rb_1_user_info_woman"
+                        android:src="@drawable/drw_1_sex_select_woman_color" />
+
+                    <ImageView
+                        android:id="@+id/iv_1_user_info_woman"
+                        android:layout_width="128dp"
+                        android:layout_height="47dp"
+                        android:background="@drawable/drw_2_sex_select_color"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
+                android:text="年龄"
+                android:textSize="17sp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_1_user_info_age"
+                android:layout_width="255dp"
+                android:layout_height="37dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/drw_1_juxing_white">
+
+                <TextView
+                    android:id="@+id/tv_1_user_info_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="24岁"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/iv_1_user_info_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="18dp"
+                    android:paddingBottom="3dp"
+                    android:src="@drawable/drw_1_age_point" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_1_save"
+            android:layout_width="305dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/user_drw_btn_1"
+            android:padding="0dp"
+            android:text="保存"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/layout/act_1_modify_info.xml -->

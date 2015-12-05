@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/drw_1_juxing_white"
+    android:orientation="vertical"
+    android:paddingTop="12dp"
+
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/tv_dlg_custom_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择年龄"
+
+        android:gravity="center"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dddddd"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="13dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:layout_gravity="center">
+
+        <com.aigo.usermodule.ui.custom.CustomNumberPicker
+            android:id="@+id/pc_dlg_set_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="5dp"
+            android:text="岁"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dddddd"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_dlg_set_age_custom_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#333333"
+            android:textSize="16sp"
+
+            android:background="@drawable/button_selector"
+        android:gravity="center"
+
+        android:text="取消"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="45dp"
+            android:background="#dddddd" />
+
+        <Button
+            android:id="@+id/btn_dlg_set_age_custom_ok"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:background="@drawable/button_selector"
+            android:gravity="center"
+
+        android:text="确定"/>
+    </LinearLayout>
+
+</LinearLayout>
+<!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/layout/dialog.xml -->

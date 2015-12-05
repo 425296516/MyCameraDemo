@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aigo.usermodule"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="20" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- 发送短信 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 阅读消息 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- 写入消息 -->
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <!-- 接收消息 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.aigo.usermodule.ui.LoginActivity"
+            android:label="@string/yonghudenglu"
+            android:screenOrientation="portrait"
+            android:theme="@style/UserTheme" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" /> -->
+
+        </activity>
+        <activity
+            android:name="com.aigo.usermodule.ui.RegisterActivity"
+            android:label="@string/actionbar_register"
+            android:screenOrientation="portrait"
+            android:theme="@style/UserTheme" />
+
+        <!-- QQ -->
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1102296874" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.aigo.usermodule.ui.FindPasswordActivity"
+            android:label="@string/find_password"
+            android:screenOrientation="portrait"
+            android:theme="@style/UserTheme" />
+        <activity
+            android:name="com.aigo.usermodule.ui.UserCenterActivity"
+            android:label="@string/user_center"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/UserTheme" />
+        <activity
+            android:name="com.aigo.usermodule.ui.UpdateUserInfoActivity"
+            android:label="@string/update_user_info"
+            android:screenOrientation="portrait"
+            android:theme="@style/UserTheme" />
+        <activity
+            android:name="com.aigo.usermodule.ui.UpdatePasswordActivity"
+            android:label="@string/update_password"
+            android:screenOrientation="portrait"
+            android:theme="@style/UserTheme" />
+        <activity
+            android:name="eu.janmuller.android.simplecropimage.CropImage"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

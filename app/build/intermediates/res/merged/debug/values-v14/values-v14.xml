@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/zhangcirui/myproject/MyCameraDemo/app/src/main/res/values-v14/attrs.xml -->
+    <eat-comment/>
+    <attr format="color" name="color2"/>
+    <attr format="reference" name="icon2"/>
+    <attr format="dimension" name="rightPadding"/>
+    <attr format="string" name="text"/>
+    <attr format="dimension" name="text_size"/>
+    <declare-styleable name="ChangeColorIconView">
+        <attr name="icon2"/>
+        <attr name="color2"/>
+        <attr name="text"/>
+        <attr name="text_size"/>
+    </declare-styleable>
+    <declare-styleable name="ColoredRatingBar">
+        <attr format="boolean" name="indicator"/>
+        <attr format="float" name="rating"/>
+        <attr format="float" name="space"/>
+        <attr format="float" name="size"/>
+
+        <attr format="reference" name="coloredRatingBarStyle"/>
+
+    </declare-styleable>
+    <declare-styleable name="HorizontalProgressBarWithNumber">
+        <attr format="color" name="progress_unreached_color"/>
+        <attr format="color" name="progress_reached_color"/>
+        <attr format="dimension" name="progress_reached_bar_height"/>
+        <attr format="dimension" name="progress_unreached_bar_height"/>
+        <attr format="dimension" name="progress_text_size"/>
+        <attr format="color" name="progress_text_color"/>
+        <attr format="dimension" name="progress_text_offset"/>
+        <attr format="enum" name="progress_text_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MyToggleButton">
+        <!-- 添加一个属性 名称随意 -->
+        <attr format="reference" name="bitmap_bg"/>
+        <attr format="reference" name="slide_btn"/>
+
+    </declare-styleable>
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr format="color" name="pstsIndicatorColor"/>
+        <attr format="color" name="pstsUnderlineColor"/>
+        <attr format="color" name="pstsDividerColor"/>
+        <attr format="dimension" name="pstsIndicatorHeight"/>
+        <attr format="dimension" name="pstsUnderlineHeight"/>
+        <attr format="dimension" name="pstsDividerPadding"/>
+        <attr format="dimension" name="pstsTabPaddingLeftRight"/>
+        <attr format="dimension" name="pstsScrollOffset"/>
+        <attr format="reference" name="pstsTabBackground"/>
+        <attr format="boolean" name="pstsShouldExpand"/>
+        <attr format="boolean" name="pstsTextAllCaps"/>
+    </declare-styleable>
+    <declare-styleable name="RoundProgressBarWidthNumber">
+        <attr format="dimension" name="radius"/>
+    </declare-styleable>
+    <declare-styleable name="SlidingMenu">
+        <attr name="rightPadding"/>
+    </declare-styleable>
+    <declare-styleable name="SwitchButton">
+        <attr format="dimension" name="bmWidth"/>
+        <attr format="dimension" name="bmHeight"/>
+    </declare-styleable>
+    <!-- From: file:/Users/zhangcirui/myproject/MyCameraDemo/app/src/main/res/values-v14/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- API 14 theme customizations can go here. -->
+    </style>
+</resources>

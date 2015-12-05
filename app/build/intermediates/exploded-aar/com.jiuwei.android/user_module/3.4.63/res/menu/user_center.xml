@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.aigo.usermodule.ui.UserCenterActivity">
+    <item
+        android:id="@+id/action_update_user_info"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/update_user_info" />
+    <item
+        android:id="@+id/action_update_password"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/update_password" />
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/logout" />
+</menu>
+<!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/menu/user_center.xml -->

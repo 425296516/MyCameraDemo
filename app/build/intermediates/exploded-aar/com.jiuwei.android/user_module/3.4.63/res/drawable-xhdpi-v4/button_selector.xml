@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <!--<item android:drawable="@drawable/bg_item_press" android:state_pressed="true"/>
+    <item android:drawable="@drawable/bg_item_press" android:state_selected="true"/>
+    <item android:drawable="@drawable/bg_item_press" android:state_enabled="true"/>-->
+    <item  android:state_pressed="true"
+        android:drawable="@drawable/bg_item_press" />
+<!--
+    <item android:drawable="@drawable/bg_item_normal" android:state_pressed="false"/>
+    <item android:drawable="@drawable/bg_item_normal" android:state_selected="false"/>
+    <item android:drawable="@drawable/bg_item_normal" android:state_enabled="false"/>-->
+    <item android:drawable="@drawable/bg_item_normal"/>
+</selector><!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/drawable-xhdpi/button_selector.xml -->

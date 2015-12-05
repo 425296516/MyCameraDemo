@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:color="@color/user_color_text_1_pressed" />
+    <item android:state_selected="true" android:color="@color/user_color_text_1_pressed" />
+    <item android:state_focused="true" android:color="@color/user_color_text_1_pressed" />
+    <item android:color="@color/user_color_text_1" />
+</selector>
+<!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/color/user_drw_text_1.xml -->

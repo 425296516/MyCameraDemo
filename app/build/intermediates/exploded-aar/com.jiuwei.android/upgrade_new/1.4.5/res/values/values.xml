@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/qinqi/Documents/work/share_mods/android/util_factory/UtilFactory/upgradepackagenew/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="color_e3e3e3">#e3e3e3</color>
+    <color name="color_f7f7f7">#f7f7f7</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_40">#66000000</color>
+    <color name="transparent_60">#99000000</color>
+    <!-- From: file:/Users/qinqi/Documents/work/share_mods/android/util_factory/UtilFactory/upgradepackagenew/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">UpgradePackageNew</string>
+    <!-- From: file:/Users/qinqi/Documents/work/share_mods/android/util_factory/UtilFactory/upgradepackagenew/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+</resources>

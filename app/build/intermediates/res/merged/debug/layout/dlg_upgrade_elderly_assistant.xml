@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="360dp"
+    android:layout_gravity="center"
+    android:background="@drawable/drw_1_dialog_bg"
+    android:paddingTop="12dp">
+
+    <TextView
+        android:id="@+id/tv_dlg_custom_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="更新"
+        android:textColor="#88db75"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/v_1_view_up"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_dlg_custom_title"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="13dp"
+        android:background="#dddddd" />
+
+    <LinearLayout
+        android:id="@+id/ll_1_btn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_dlg_set_time_custom_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/drw_1_profile_background"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="45dp"
+            android:background="#dddddd" />
+
+        <Button
+            android:id="@+id/btn_dlg_set_time_custom_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/drw_1_profile_background"
+            android:gravity="center"
+            android:text="立即升级"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_1_view_down"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/ll_1_btn"
+        android:background="#dddddd" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/v_1_view_down"
+        android:layout_below="@id/v_1_view_up">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        android:padding="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发现新版本:"
+                android:textColor="#666666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_1_upgrade_version_context"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="-修改提醒时，提醒铃声和提醒弹窗不同步问题"
+                android:textColor="#666666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="更新内容:"
+                android:textColor="#666666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_1_upgrade_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="-修改提醒时，提醒铃声和提醒弹窗不同步问题"
+                android:textColor="#666666"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+
+
+<!-- From: file:/Users/qinqi/Documents/work/share_mods/android/util_factory/UtilFactory/upgradepackagenew/src/main/res/layout/dlg_upgrade_elderly_assistant.xml --><!-- From: file:/Users/zhangcirui/myproject/MyCameraDemo/app/build/intermediates/exploded-aar/com.jiuwei.android/upgrade_new/1.4.5/res/layout/dlg_upgrade_elderly_assistant.xml -->
