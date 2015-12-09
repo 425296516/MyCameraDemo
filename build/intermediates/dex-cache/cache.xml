@@ -2,18 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/zhangcirui/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jar="/Users/zhangcirui/myproject/MyCameraDemo/app/build/intermediates/exploded-aar/com.jiuwei.android/ln/1.0.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
-        <dex dex="/Users/zhangcirui/myproject/MyCameraDemo/app/build/intermediates/pre-dexed/debug/httpclient-4.3.6-9faf04e1a4597981baf5ff219f305c7f77209fdd.jar" />
-    </item>
-    <item
-        jar="/Users/zhangcirui/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
-        <dex dex="/Users/zhangcirui/myproject/MyCameraDemo/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.9-f4e65c77b8cd73f41aa5935a57a5a72f17d21db4.jar" />
+        sha1="2b285bc8510cd9144014884f5f0a27339020069d">
+        <dex dex="/Users/zhangcirui/myproject/MyCameraDemo/app/build/intermediates/pre-dexed/debug/classes-4f0113182c9a5c4dce5b18547b97f8aa69fb1ef9.jar" />
     </item>
 
 </items>

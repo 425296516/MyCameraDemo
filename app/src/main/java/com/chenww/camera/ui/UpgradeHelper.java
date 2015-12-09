@@ -30,7 +30,7 @@ import java.text.SimpleDateFormat;
  */
 public class UpgradeHelper {
     private static boolean downloadFileIsSuccess = false;
-    private static String mPackageName = "com.aigo.kt03";
+    private static String mPackageName = "com.chenww.camera.ui";
     private static String mUrl = "http://api.aigolife.com/device/GetApplicationInfo";
     private static Dialog mDialog;
     private static ProgressDialog mProgressDialog;
@@ -110,8 +110,8 @@ public class UpgradeHelper {
 
             UpgradeModule.getInstance().autoInstall(true)
                     .autoInstall(true)
-                    .packageName("com.aigo.kt03")
-                    .url("http://api.aigolife.com/device/GetApplicationInfo")
+                    .packageName(mPackageName)
+                    .url(mUrl)
                     .checkNewVersion(new UpgradeModule.OnCheckListener() {
                         @Override
                         public void checkStart() {

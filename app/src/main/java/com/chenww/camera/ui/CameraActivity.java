@@ -32,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.jiuwei.upgrade_package_new.lib.UpgradeModule;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -99,6 +100,12 @@ public class CameraActivity extends Activity {
         }).start();
 
         initThread();
+
+        UpgradeModule.init(this);
+        UpgradeHelper.checkUpgrade(
+                this,
+                false,
+                com.jiuwei.upgrade_package_new.lib.Constant.DIALOG_STYLE_ELDERLY_ASSISTANT);
 
     }
 

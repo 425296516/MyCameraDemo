@@ -8,6 +8,8 @@ android {
         applicationId "com.chenww.camera.ui"
         minSdkVersion 14
         targetSdkVersion 16
+        versionCode 1
+        versionName "2.0.0"
     }
 
     buildTypes {
@@ -25,5 +27,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.+'
     compile 'com.jiuwei.android:upgrade_new:1.4.5'
     compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.jiuwei.android:ln:1.0.0'
     compile 'ch.acra:acra:4.5.0'
 }
