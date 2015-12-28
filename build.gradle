@@ -12,5 +12,6 @@ allprojects {
     repositories {
         jcenter()
         maven { url 'http://115.28.43.225:82/nexus/content/repositories/releases/' }
+
     }
 }

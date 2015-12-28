@@ -76,7 +76,8 @@ public class CameraActivity extends Activity {
 
         //设置布局
         setContentView(R.layout.activity_camera);
-        mTime = (TextView)findViewById(R.id.tv_time);
+        mTime = (TextView) findViewById(R.id.tv_time);
+        // mRotate = (TextView)findViewById(R.id.tv_rotate);
 
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
@@ -100,15 +101,25 @@ public class CameraActivity extends Activity {
         }).start();
 
         initThread();
+        /*mRotate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(degree<360){
+                    degree = degree + 90;
+                }else{
+                    degree = 0;
+                }
 
+                mRotate.setText("旋转"+degree+"度");
+            }
+        });*/
         UpgradeModule.init(this);
         UpgradeHelper.checkUpgrade(
                 this,
-                false,
+                true,
                 com.jiuwei.upgrade_package_new.lib.Constant.DIALOG_STYLE_ELDERLY_ASSISTANT);
 
     }
-
 
 
     public void initThread() {
@@ -122,7 +133,7 @@ public class CameraActivity extends Activity {
                 bitmap = downloadBitmap(downUrl);
                 //BitmapWorkerTask task = new BitmapWorkerTask(mImageView);
                 //task.execute(downUrl);
-                if(bitmap !=null){
+                if (bitmap != null) {
                     mShowHandler.sendEmptyMessage(0);
                 }
 
@@ -142,13 +153,14 @@ public class CameraActivity extends Activity {
 
 
     }
+
     private Bitmap bitmap;
-    private Handler mShowHandler = new Handler(){
+    private Handler mShowHandler = new Handler() {
 
         @Override
         public void handleMessage(Message msg) {
 
-            if(mImageView !=null && bitmap !=null){
+            if (mImageView != null && bitmap != null) {
                 mImageView.setImageBitmap(bitmap);
             }
 
@@ -178,10 +190,11 @@ public class CameraActivity extends Activity {
     }
 
     private Button mClick;
+
     public void initData() {
 
         mCity = (TextView) findViewById(R.id.tv_city);
-        mClick = (Button)findViewById(R.id.btn_shutter);
+        mClick = (Button) findViewById(R.id.btn_shutter);
         downUrl = getIntent().getStringExtra("downUrl");
         uploadSign = getIntent().getStringExtra("uploadSign");
         mIsQian = getIntent().getBooleanExtra("isQian", true);
@@ -205,26 +218,32 @@ public class CameraActivity extends Activity {
                     public void run() {
                         //myCamera.autoFocus(myAutoFocus);
                         //对焦后拍照
-                        try{
-                            myCamera.takePicture(null, null, myPicCallback);
-                        }catch (Exception e){
+                        try {
+                            myCamera.takePicture(null, rawCallback, myPicCallback);
+                        } catch (Exception e) {
                             handler.sendEmptyMessage(2);
                             e.printStackTrace();
                             //初始化surface
-                            startActivity(new Intent(getApplicationContext(),SelectActivity.class));
-                            if(mTimerPai!=null){
+                            startActivity(new Intent(getApplicationContext(), SelectActivity.class));
+                            if (mTimerPai != null) {
                                 mTimerPai.cancel();
                             }
                             finish();
                         }
 
                     }
-                },0,2000);
+                }, 0, 2000);
 
             }
         });
 
     }
+
+    PictureCallback rawCallback = new PictureCallback() {
+        public void onPictureTaken(byte[] data, Camera camera) {
+            //			 Log.d(TAG, "onPictureTaken - raw");
+        }
+    };
 
     //初始化surface
     @SuppressWarnings("deprecation")
@@ -255,7 +274,7 @@ public class CameraActivity extends Activity {
         }
     }
 
-   private Timer mTimerPai;
+    private Timer mTimerPai;
 
     //对焦并拍照
     private void autoFocus() {
@@ -303,37 +322,31 @@ public class CameraActivity extends Activity {
         Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
 
         if (mIsQian) {
+            Camera.getCameraInfo(1, cameraInfo);
+            if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+                try {
+                    Log.d("Demo", "tryToOpenCamera");
+                    myCamera = Camera.open(1);
 
-            for (int camIdx = 0, cameraCount = Camera.getNumberOfCameras(); camIdx < cameraCount; camIdx++) {
-                Camera.getCameraInfo(camIdx, cameraInfo);
-                if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-                    try {
-                        Log.d("Demo", "tryToOpenCamera");
-                        myCamera = Camera.open(camIdx);
-
-                    } catch (RuntimeException e) {
-                        e.printStackTrace();
-                        return false;
-                    }
+                } catch (RuntimeException e) {
+                    e.printStackTrace();
+                    return false;
                 }
             }
-
         } else {
 
             //如果开启前置失败（无前置）则开启后置
-            if (myCamera == null) {
-                for (int camIdx = 0, cameraCount = Camera.getNumberOfCameras(); camIdx < cameraCount; camIdx++) {
-                    Camera.getCameraInfo(camIdx, cameraInfo);
-                    if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
-                        try {
-                            myCamera = Camera.open(camIdx);
 
-                        } catch (RuntimeException e) {
-                            return false;
-                        }
+                Camera.getCameraInfo(0, cameraInfo);
+                if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
+                    try {
+                        myCamera = Camera.open(0);
+
+                    } catch (RuntimeException e) {
+                        return false;
                     }
                 }
-            }
+
         }
 
         try {
@@ -430,6 +443,7 @@ public class CameraActivity extends Activity {
     };
 
 
+    //int degree = 0;
     //拍照成功回调函数
     private PictureCallback myPicCallback = new PictureCallback() {
 
@@ -440,6 +454,7 @@ public class CameraActivity extends Activity {
             //将得到的照片进行270°旋转，使其竖直
             Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
             Matrix matrix = new Matrix();
+
             matrix.preRotate(0);
             bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
             bitmap = comp(bitmap);

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_1_register_validation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f7f7f7"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/drw_1_rectangle_green_sawtooth_r"
+                android:gravity="center"
+                android:text="@string/tv_1_register_validation"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/drw_1_rectangle_gray_sawtooth_left"
+                android:gravity="center"
+                android:text="完善资料"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="23dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:background="@drawable/drw_1_juxing_white">
+
+                <com.aigo.usermodule.ui.view.ClearEditText
+
+                    android:id="@+id/et_1_email"
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="9dip"
+                    android:background="@null"
+                    android:drawableRight="@drawable/drw_1_clear"
+                    android:hint="@string/please_input_correct_email_or_phone_number"
+                    android:singleLine="true"
+                    android:textColor="@color/drw_1_forgot_text_click_selector"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/drw_1_juxing_white">
+
+                <com.aigo.usermodule.ui.view.ClearEditText
+                    android:id="@+id/et_1_pwd"
+                    android:layout_width="280dp"
+                    android:digits="@string/pwd_input_digits"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="9dip"
+                    android:background="@null"
+                    android:drawableRight="@drawable/drw_1_clear"
+                    android:hint="@string/please_input_password_morn_than_six"
+                    android:password="true"
+                    android:singleLine="true"
+                    android:textColor="@color/drw_1_forgot_text_click_selector"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:id="@+id/iv_1_visible_pwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="34dp"
+                    android:button="@drawable/drw_1_checkbox_eye"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="183dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/drw_1_juxing_white">
+
+                    <EditText
+                        android:id="@+id/et_1_verification"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:background="@null"
+                        android:hint="@string/input_verify_code"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:singleLine="true"
+                        android:textColor="@color/drw_1_forgot_text_click_selector"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <com.aigo.usermodule.ui.view.DelayButton
+                    android:id="@+id/btn_1_get_verification_code"
+                    android:layout_width="112dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/drw_1_verification_code_button"
+                    android:enabled="false"
+                    android:text="@string/get_verify_code"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="306dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:padding="3dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_1_register_agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/i_have_agree"
+                    android:textColor="@color/user_color_text_i_have_agree"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_1_register_user_protocol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@string/aigo_clause_statement"
+                    android:textColor="@color/user_drw_text_1"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginTop="120dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_1_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/user_drw_btn_1"
+                    android:onClick="onNextStepClick"
+                    android:padding="0dp"
+                    android:text="@string/register"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/layout/frag_1_phone_validation.xml -->

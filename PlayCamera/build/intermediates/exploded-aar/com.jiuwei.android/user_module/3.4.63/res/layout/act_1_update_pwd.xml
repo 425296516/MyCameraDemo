@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_1_modify_pwd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!--旧密码-->
+    <RelativeLayout
+        android:layout_width="306dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/drw_1_juxing_white">
+
+        <com.aigo.usermodule.ui.view.ClearEditText
+            android:id="@+id/et_1_old_pwd"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="9dip"
+            android:background="@null"
+            android:digits="@string/pwd_input_digits"
+            android:drawableRight="@drawable/drw_1_clear"
+            android:hint="请输入旧密码"
+            android:password="true"
+            android:singleLine="true"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+    <!--新密码-->
+    <RelativeLayout
+        android:layout_width="306dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/drw_1_juxing_white">
+
+        <com.aigo.usermodule.ui.view.ClearEditText
+            android:id="@+id/et_1_new_pwd"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="9dip"
+            android:background="@null"
+            android:digits="@string/pwd_input_digits"
+            android:drawableRight="@drawable/drw_1_clear"
+            android:hint="请输入新密码"
+            android:password="true"
+            android:singleLine="true"
+            android:textSize="16sp" />
+
+
+        <CheckBox
+            android:id="@+id/iv_1_visible_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="44dp"
+            android:button="@drawable/drw_1_checkbox_eye"
+            android:clickable="true"
+            android:src="@drawable/drw_1_passwords_visible_open"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="306dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_1_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/user_drw_btn_1"
+            android:onClick="onUpdatePassword"
+            android:padding="0dp"
+            android:text="完成"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+<!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/layout/act_1_update_pwd.xml -->

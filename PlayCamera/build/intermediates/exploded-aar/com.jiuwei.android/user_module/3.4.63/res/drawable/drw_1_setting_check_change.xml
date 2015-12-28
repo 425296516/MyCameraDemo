@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="false"
+        android:drawable="@drawable/drw_1_shape_border"/>
+
+    <item android:state_checked="true"
+        android:drawable="@drawable/drw_1_setting_agree"/>
+    <item android:drawable="@drawable/drw_1_shape_border"/>
+
+</selector>
+<!-- From: file:/Users/gaoyf/Dev/workspace/mywork/share_mods/android/UserModule/app/src/main/res/drawable/drw_1_setting_check_change.xml -->

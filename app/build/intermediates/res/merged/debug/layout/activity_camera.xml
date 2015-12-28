@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyCamera" >
+    >
 
     <ImageView
         android:id="@+id/image_view"
@@ -14,9 +14,8 @@
 
     <SurfaceView
         android:id="@+id/camera_surfaceview"
-
-        android:layout_width="1dp"
-        android:layout_height="1dp" >
+        android:layout_width="100dp"
+        android:layout_height="100dp" >
     </SurfaceView>
 
     <TextView

@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "org.yanzi.playcamera"
+        minSdkVersion 9
+        targetSdkVersion 21
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:21.0.0'
+
+    compile 'com.squareup.picasso:picasso:2.3.4'
+    compile 'com.koushikdutta.async:androidasync:1.3.+'
+    compile 'com.google.code.gson:gson:2.2.+'
+
+    compile 'ch.acra:acra:4.5.0'
+}

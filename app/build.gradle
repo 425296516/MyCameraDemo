@@ -8,7 +8,7 @@ android {
         applicationId "com.chenww.camera.ui"
         minSdkVersion 14
         targetSdkVersion 16
-        versionCode 1
+        versionCode 3
         versionName "2.0.0"
     }
 
