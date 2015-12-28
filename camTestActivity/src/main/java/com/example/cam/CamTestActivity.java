@@ -80,6 +80,7 @@ public class CamTestActivity extends Activity {
     protected void onResume() {
         super.onResume();
         int numCams = Camera.getNumberOfCameras();
+
         if (numCams > 0) {
             try {
                 Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
