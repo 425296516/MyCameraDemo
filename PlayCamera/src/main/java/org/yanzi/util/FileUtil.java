@@ -18,7 +18,7 @@ public class FileUtil {
 	/**初始化保存路径
 	 * @return
 	 */
-	private static String initPath(){
+	public static String initPath(){
 		if(storagePath.equals("")){
 			storagePath = parentPath.getAbsolutePath()+"/" + DST_FOLDER_NAME;
 			File f = new File(storagePath);
@@ -53,5 +53,26 @@ public class FileUtil {
 
 	}
 
+
+	public static void saveBitmap2(Bitmap b){
+
+		String path = initPath();
+		long dataTake = System.currentTimeMillis();
+		String jpegName = path + "/" +"camera2.jpg";
+		Log.i(TAG, "saveBitmap:jpegName = " + jpegName);
+		try {
+			FileOutputStream fout = new FileOutputStream(jpegName);
+			BufferedOutputStream bos = new BufferedOutputStream(fout);
+			b.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+			bos.flush();
+			bos.close();
+			Log.i(TAG, "saveBitmap成功");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			Log.i(TAG, "saveBitmap:失败");
+			e.printStackTrace();
+		}
+
+	}
 
 }

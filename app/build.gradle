@@ -8,8 +8,8 @@ android {
         applicationId "com.chenww.camera.ui"
         minSdkVersion 14
         targetSdkVersion 16
-        versionCode 3
-        versionName "2.0.0"
+        versionCode 4
+        versionName "2.0.4"
     }
 
     buildTypes {
@@ -29,4 +29,8 @@ dependencies {
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.jiuwei.android:ln:1.0.0'
     compile 'ch.acra:acra:4.5.0'
+
+    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
 }

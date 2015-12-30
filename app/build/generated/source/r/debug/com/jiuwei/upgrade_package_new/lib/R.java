@@ -21,15 +21,15 @@ public final class R {
 		public static final int drw_1_shape_rectangle_white_no_stroke_f7f7f7 = 0x7f020006;
 	}
 	public static final class id {
-		public static final int btn_dlg_set_time_custom_cancel = 0x7f09000f;
-		public static final int btn_dlg_set_time_custom_ok = 0x7f090010;
-		public static final int ll_1_btn = 0x7f09000e;
-		public static final int scroll_view = 0x7f090012;
-		public static final int tv_1_upgrade_message = 0x7f090014;
-		public static final int tv_1_upgrade_version_context = 0x7f090013;
-		public static final int tv_dlg_custom_title = 0x7f09000c;
-		public static final int v_1_view_down = 0x7f090011;
-		public static final int v_1_view_up = 0x7f09000d;
+		public static final int btn_dlg_set_time_custom_cancel = 0x7f090010;
+		public static final int btn_dlg_set_time_custom_ok = 0x7f090011;
+		public static final int ll_1_btn = 0x7f09000f;
+		public static final int scroll_view = 0x7f090013;
+		public static final int tv_1_upgrade_message = 0x7f090015;
+		public static final int tv_1_upgrade_version_context = 0x7f090014;
+		public static final int tv_dlg_custom_title = 0x7f09000d;
+		public static final int v_1_view_down = 0x7f090012;
+		public static final int v_1_view_up = 0x7f09000e;
 	}
 	public static final class layout {
 		public static final int dlg_upgrade_elderly_assistant = 0x7f030002;

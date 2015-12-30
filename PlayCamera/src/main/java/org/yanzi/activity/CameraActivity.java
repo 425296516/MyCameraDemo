@@ -29,7 +29,6 @@ public class CameraActivity extends Activity implements CamOpenOverCallback {
 		Thread openThread = new Thread(){
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				CameraInterface.getInstance().doOpenCamera(CameraActivity.this);
 			}
 		};
@@ -95,5 +94,4 @@ public class CameraActivity extends Activity implements CamOpenOverCallback {
 		}
 
 	}
-
 }

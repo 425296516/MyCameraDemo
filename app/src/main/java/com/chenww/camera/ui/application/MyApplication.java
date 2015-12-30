@@ -3,6 +3,7 @@ package com.chenww.camera.ui.application;
 import com.chenww.camera.ui.R;
 import com.chenww.camera.ui.db.SPManager;
 
+import org.acra.ACRA;
 import org.acra.ReportField;
 import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
@@ -28,10 +29,9 @@ public class MyApplication extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //ACRA.init(this);
+        ACRA.init(this);
 
         //UserModule.getInstance().init(this);
-
         SPManager.getInstance().init(this);
         //Tools.init(this);
 

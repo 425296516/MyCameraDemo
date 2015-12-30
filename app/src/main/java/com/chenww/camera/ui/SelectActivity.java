@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.chenww.camera.ui.db.SPManager;
+import com.jiuwei.upgrade_package_new.lib.UpgradeModule;
 
 public class SelectActivity extends Activity implements View.OnClickListener {
 
@@ -61,7 +62,11 @@ public class SelectActivity extends Activity implements View.OnClickListener {
             finish();
         }
 
-
+        UpgradeModule.init(this);
+        UpgradeHelper.checkUpgrade(
+                this,
+                true,
+                com.jiuwei.upgrade_package_new.lib.Constant.DIALOG_STYLE_ELDERLY_ASSISTANT);
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.hardware.Camera.ShutterCallback;
 import android.hardware.Camera.Size;
+import android.util.Base64;
 import android.util.Log;
 import android.view.SurfaceHolder;
 
@@ -14,6 +15,7 @@ import org.yanzi.util.CamParaUtil;
 import org.yanzi.util.FileUtil;
 import org.yanzi.util.ImageUtil;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -43,7 +45,8 @@ public class CameraInterface {
 	 */
 	public void doOpenCamera(CamOpenOverCallback callback){
 		Log.i(TAG, "Camera open....");
-		mCamera = Camera.open();
+
+		mCamera = Camera.open(0);
 		Log.i(TAG, "Camera open over....");
 		callback.cameraHasOpened();
 	}
@@ -65,10 +68,10 @@ public class CameraInterface {
 			CamParaUtil.getInstance().printSupportPreviewSize(mParams);
 			//设置PreviewSize和PictureSize
 			Size pictureSize = CamParaUtil.getInstance().getPropPictureSize(
-					mParams.getSupportedPictureSizes(),previewRate, 800);
+					mParams.getSupportedPictureSizes(),previewRate, 480);
 			mParams.setPictureSize(pictureSize.width, pictureSize.height);
 			Size previewSize = CamParaUtil.getInstance().getPropPreviewSize(
-					mParams.getSupportedPreviewSizes(), previewRate, 800);
+					mParams.getSupportedPreviewSizes(), previewRate, 480);
 			mParams.setPreviewSize(previewSize.width, previewSize.height);
 
 			mCamera.setDisplayOrientation(90);
@@ -159,12 +162,57 @@ public class CameraInterface {
 				//图片竟然不能旋转了，故这里要旋转下
 				Bitmap rotaBitmap = ImageUtil.getRotateBitmap(b, 90.0f);
 				FileUtil.saveBitmap(rotaBitmap);
+				String path = FileUtil.initPath()+"/" +"camera.jpg";
+
+
+				Bitmap bitmap = getSmallBitmap(path);
+				FileUtil.saveBitmap2(bitmap);
+
 			}
 			//再次进入预览
 			mCamera.startPreview();
 			isPreviewing = true;
 		}
 	};
+
+	//计算图片的缩放值
+	public static int calculateInSampleSize(BitmapFactory.Options options,int reqWidth, int reqHeight) {
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+		int inSampleSize = 1;
+
+		if (height > reqHeight || width > reqWidth) {
+			final int heightRatio = Math.round((float) height/ (float) reqHeight);
+			final int widthRatio = Math.round((float) width / (float) reqWidth);
+			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+		}
+		return inSampleSize;
+	}
+
+	// 根据路径获得图片并压缩，返回bitmap用于显示
+	public static Bitmap getSmallBitmap(String filePath) {
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeFile(filePath, options);
+
+		// Calculate inSampleSize
+		options.inSampleSize = calculateInSampleSize(options, 320, 480);
+
+		// Decode bitmap with inSampleSize set
+		options.inJustDecodeBounds = false;
+
+		return BitmapFactory.decodeFile(filePath, options);
+	}
+
+	//把bitmap转换成String
+	public static String bitmapToString(String filePath) {
+
+		Bitmap bm = getSmallBitmap(filePath);
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		bm.compress(Bitmap.CompressFormat.JPEG, 40, baos);
+		byte[] b = baos.toByteArray();
+		return Base64.encodeToString(b, Base64.DEFAULT);
+	}
 
 
 }

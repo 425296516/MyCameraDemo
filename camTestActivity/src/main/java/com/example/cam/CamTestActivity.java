@@ -66,7 +66,7 @@ public class CamTestActivity extends Activity {
                     @Override
                     public void run() {
                         if (camera != null)
-                            camera.takePicture(shutterCallback, rawCallback, jpegCallback);
+                            camera.takePicture(null, rawCallback, jpegCallback);
                     }
                 }, 0, 2000);
             }
@@ -85,9 +85,9 @@ public class CamTestActivity extends Activity {
             try {
                 Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
 
-                Camera.getCameraInfo(1, cameraInfo);
-                if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-                    camera = Camera.open(1);
+                Camera.getCameraInfo(0, cameraInfo);
+                if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
+                    camera = Camera.open(0);
                     camera.startPreview();
                     preview.setCamera(camera);
                 }
