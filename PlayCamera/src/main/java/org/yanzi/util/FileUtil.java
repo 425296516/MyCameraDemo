@@ -14,6 +14,7 @@ public class FileUtil {
 	private static final File parentPath = Environment.getExternalStorageDirectory();
 	private static   String storagePath = "";
 	private static final String DST_FOLDER_NAME = "PlayCamera";
+	public static File PHOTO_DIR = new File(Environment.getExternalStorageDirectory().getPath() + "/aigo_kt03/");
 
 	/**初始化保存路径
 	 * @return
@@ -36,7 +37,7 @@ public class FileUtil {
 
 		String path = initPath();
 		long dataTake = System.currentTimeMillis();
-		String jpegName = path + "/" +"camera.jpg";
+		String jpegName =  PHOTO_DIR.getPath() + "/" +"camera.jpg";
 		Log.i(TAG, "saveBitmap:jpegName = " + jpegName);
 		try {
 			FileOutputStream fout = new FileOutputStream(jpegName);
@@ -56,9 +57,9 @@ public class FileUtil {
 
 	public static void saveBitmap2(Bitmap b){
 
-		String path = initPath();
+		//String path = PHOTO_DIR.getPath();
 		long dataTake = System.currentTimeMillis();
-		String jpegName = path + "/" +"camera2.jpg";
+		String jpegName = PHOTO_DIR.getPath() + "/" +"camera2.jpg";
 		Log.i(TAG, "saveBitmap:jpegName = " + jpegName);
 		try {
 			FileOutputStream fout = new FileOutputStream(jpegName);

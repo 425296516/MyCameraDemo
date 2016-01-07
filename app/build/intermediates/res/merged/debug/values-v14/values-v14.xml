@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/zhangcirui/myproject/MyCameraDemo/app/src/main/res/values-v14/attrs.xml -->
+    <!-- From: file:/Users/zhangcirui/MyCameraDemo/app/src/main/res/values-v14/attrs.xml -->
     <eat-comment/>
     <attr format="color" name="color2"/>
     <attr format="reference" name="icon2"/>
@@ -64,7 +64,7 @@
         <attr format="dimension" name="bmWidth"/>
         <attr format="dimension" name="bmHeight"/>
     </declare-styleable>
-    <!-- From: file:/Users/zhangcirui/myproject/MyCameraDemo/app/src/main/res/values-v14/styles.xml -->
+    <!-- From: file:/Users/zhangcirui/MyCameraDemo/app/src/main/res/values-v14/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- API 14 theme customizations can go here. -->

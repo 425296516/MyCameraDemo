@@ -36,7 +36,7 @@ public class FileUtil {
 	public static void saveBitmap(Bitmap b){
 
 		String path = initPath();
-		long dataTake = System.currentTimeMillis();
+
 		String jpegName = PHOTO_DIR.getPath() + "/" +"camera.jpg";
 		Log.i(TAG, "saveBitmap:jpegName = " + jpegName);
 		try {

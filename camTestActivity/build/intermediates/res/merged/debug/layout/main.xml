@@ -16,4 +16,4 @@
         android:layout_centerInParent="true"
         android:text="@string/btn_capture" />
 
-</RelativeLayout><!-- From: file:/Users/zhangcirui/myproject/MyCameraDemo/camTestActivity/src/main/res/layout/main.xml -->
+</RelativeLayout><!-- From: file:/Users/zhangcirui/MyCameraDemo/camTestActivity/src/main/res/layout/main.xml -->

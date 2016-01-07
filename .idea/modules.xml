@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CameraGuide-master/CameraGuide-master.iml" filepath="$PROJECT_DIR$/CameraGuide-master/CameraGuide-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyCameraDemo.iml" filepath="$PROJECT_DIR$/MyCameraDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/PlayCamera/PlayCamera.iml" filepath="$PROJECT_DIR$/PlayCamera/PlayCamera.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/camTestActivity/camTestActivity.iml" filepath="$PROJECT_DIR$/camTestActivity/camTestActivity.iml" />
       <module fileurl="file://$PROJECT_DIR$/customCamera/customCamera.iml" filepath="$PROJECT_DIR$/customCamera/customCamera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mooccamera/mooccamera.iml" filepath="$PROJECT_DIR$/mooccamera/mooccamera.iml" />
     </modules>
   </component>
 </project>

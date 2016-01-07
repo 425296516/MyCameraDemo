@@ -2,6 +2,10 @@ package org.yanzi.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.Menu;
 import android.view.SurfaceHolder;
 import android.view.View;
@@ -15,6 +19,7 @@ import org.yanzi.camera.preview.CameraSurfaceView;
 import org.yanzi.playcamera.R;
 import org.yanzi.util.DisplayUtil;
 
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -23,6 +28,10 @@ public class CameraActivity extends Activity implements CamOpenOverCallback {
 	CameraSurfaceView surfaceView = null;
 	ImageButton shutterBtn;
 	float previewRate = -1f;
+	private File PHOTO_DIR = new File(Environment.getExternalStorageDirectory().getPath() + "/aigo_kt03/");
+	private String uploadUrl = "http://115.28.43.225:83/pet/fileUploadForClient.html";
+	private Timer mTimerUpload;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,7 +47,36 @@ public class CameraActivity extends Activity implements CamOpenOverCallback {
 		initViewParams();
 
 		shutterBtn.setOnClickListener(new BtnListeners());
+
+		mTimerUpload = new Timer();
+
+		mTimerUpload.schedule(new TimerTask() {
+			@Override
+			public void run() {
+
+				handlerDown.sendEmptyMessage(0);
+
+			}
+		}, 0, 3000);
+
 	}
+
+	private Handler handlerDown = new Handler() {
+
+		@Override
+		public void handleMessage(Message msg) {
+			super.handleMessage(msg);
+			//String path = FileUtil.initPath()+"/" +"camera.jpg";
+			final File pictureFile = new File(PHOTO_DIR, "camera.jpg");
+
+			Log.d(TAG,pictureFile.getAbsolutePath());
+			if (pictureFile.exists()) {
+				CameraModule.getInstance().uploadImage(pictureFile, uploadUrl, "b");
+			}
+			Log.d(TAG, "handlerDown");
+
+		}
+	};
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -51,6 +89,15 @@ public class CameraActivity extends Activity implements CamOpenOverCallback {
 		surfaceView = (CameraSurfaceView)findViewById(R.id.camera_surfaceview);
 		shutterBtn = (ImageButton)findViewById(R.id.btn_shutter);
 	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		if(mTimerUpload!=null){
+			mTimerUpload.cancel();
+		}
+	}
+
 	private void initViewParams(){
 		//LayoutParams params = surfaceView.getLayoutParams();
 		//Point p = DisplayUtil.getScreenMetrics(this);

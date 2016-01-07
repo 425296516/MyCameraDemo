@@ -2,29 +2,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_launcher"
         android:scaleType="fitXY"
-        />
+        android:src="@drawable/ic_launcher" />
 
     <SurfaceView
         android:id="@+id/camera_surfaceview"
-        android:layout_width="120dp"
-        android:layout_height="90dp" >
-    </SurfaceView>
+        android:layout_width="140dp"
+        android:layout_height="90dp"></SurfaceView>
 
     <TextView
         android:id="@+id/tv_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="选择"/>
+        android:padding="10dp"
+        android:text="选择" />
+
+    <TextView
+        android:id="@+id/tv_ration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_city"
+        android:layout_alignParentRight="true"
+        android:background="#44333333"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="旋转"
+        android:visibility="gone"
+        android:textColor="#ffffff"
+        android:textSize="30sp" />
+
 
     <TextView
         android:id="@+id/tv_city"
@@ -34,13 +48,12 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="40dp"
         android:background="#44333333"
+        android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingBottom="10dp"
-        android:textColor="#ffffff"
-        android:textSize="30sp"
         android:text="北京"
-        />
+        android:textColor="#ffffff"
+        android:textSize="30sp" />
 
 
     <TextView
@@ -50,13 +63,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:background="#44333333"
-        android:textColor="#ffffff"
-        android:textSize="14sp"
-        android:maxEms="6"
         android:gravity="center"
+        android:maxEms="6"
         android:text="12月4日16点50分33秒"
-        />
-
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
 
 
     <Button
@@ -66,8 +77,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:text="开始"
-        android:background="@drawable/btn_shutter_background" />
+        android:background="@drawable/btn_shutter_background"
+        android:text="开始" />
 
 
-</RelativeLayout><!-- From: file:/Users/zhangcirui/myproject/MyCameraDemo/app/src/main/res/layout/activity_camera.xml -->
+</RelativeLayout><!-- From: file:/Users/zhangcirui/MyCameraDemo/app/src/main/res/layout/activity_camera.xml -->
