@@ -1,8 +1,6 @@
 -- Merging decision tree log ---
 manifest
 ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:2:1-61:12
-	xmlns:android
-		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:2:11-69
 	package
 		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml
@@ -10,6 +8,8 @@ ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:2:1-6
 	android:versionName
 		INJECTED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
 		INJECTED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml
@@ -84,20 +84,20 @@ MERGED from [com.jiuwei.android:upgrade_new:1.4.5] /Users/zhangcirui/MyCameraDem
 		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:27:9-35
 	android:icon
 		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:29:9-45
-	android:theme
-		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:32:9-40
 	android:largeHeap
 		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:31:9-33
+	android:theme
+		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:32:9-40
 	android:name
 		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:28:9-50
 activity#com.chenww.camera.ui.CameraActivity
 ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:35:9-47:20
 	android:screenOrientation
 		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:37:13-50
-	android:name
-		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:36:13-43
 	android:launchMode
 		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:38:13-44
+	android:name
+		ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:36:13-43
 activity#com.chenww.camera.ui.SelectActivity
 ADDED from /Users/zhangcirui/MyCameraDemo/app/src/main/AndroidManifest.xml:48:9-58:20
 	android:label

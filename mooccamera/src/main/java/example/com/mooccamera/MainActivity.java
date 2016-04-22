@@ -304,7 +304,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
         float scale = resources.getDisplayMetrics().density;
         Bitmap bitmap = BitmapFactory.decodeFile(gResId);
 
-        //bitmap = scaleWithWH(bitmap, 300*scale, 300*scale);
+        bitmap = scaleWithWH(bitmap, 300*scale, 300*scale);
         Log.d(TAG,"bitmap="+" scale="+scale+" : "+bitmap.getWidth()+" : "+bitmap.getHeight());
         android.graphics.Bitmap.Config bitmapConfig =
                 bitmap.getConfig();

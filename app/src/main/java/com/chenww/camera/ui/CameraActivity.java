@@ -8,9 +8,15 @@ package com.chenww.camera.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ImageFormat;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.os.Bundle;
@@ -37,6 +43,7 @@ import com.jiuwei.upgrade_package_new.lib.UpgradeModule;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -54,15 +61,11 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
     private Timer mTimerDownload, mTimerUpload, mTimerDate, mTimerPai;
     private File PHOTO_DIR = new File(Environment.getExternalStorageDirectory().getPath() + "/aigo_kt03/");
     private PowerManager.WakeLock mWakeLock;
-    private TextView mTime, mSelect, mRation;
-    //private Preview preview;
-    //private static int width, height;
+    private TextView mTime, mSelect;
+
     private Button mClick;
-    private int degree = 0;
     private int mHeight;
     private int mWidth;
-    private boolean isAutoLauncher;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +80,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
         downUrl = getIntent().getStringExtra("downUrl");
         uploadSign = getIntent().getStringExtra("uploadSign");
         mIsQian = getIntent().getBooleanExtra("isQian", true);
-        isAutoLauncher = getIntent().getBooleanExtra("AUTO_LAUNCHER",false);
 
         //获取屏幕宽高
         getScreenSize();
@@ -111,13 +113,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
         mHeight = display.getHeight();
         mWidth = display.getWidth();
 
-        //Log.d(TAG,"getScreenSize width= "+width+" height"+height);
-
-       /* Display display = getWindowManager().getDefaultDisplay(); //Activity#getWindowManager()
-        Point size = new Point();
-        display.getSize(size);
-        width = size.x;
-        height = size.y;*/
     }
 
     public void initThread() {
@@ -151,7 +146,7 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
 
     private SurfaceView mPreview;
     private SurfaceHolder mHolder;
-    //int current = 0;
+
     public void initData() {
 
         mPreview = (SurfaceView) findViewById(R.id.camera_surfaceview);
@@ -160,11 +155,9 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
 
         mTime = (TextView) findViewById(R.id.tv_time);
         mSelect = (TextView) findViewById(R.id.tv_select);
-        mRation = (TextView) findViewById(R.id.tv_ration);
 
         mCity = (TextView) findViewById(R.id.tv_city);
         mClick = (Button) findViewById(R.id.btn_shutter);
-
 
         mImageView = (ImageView) findViewById(R.id.image_view);
 
@@ -175,12 +168,13 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
         }
         Log.d(TAG, "oncreate");
 
-
         if (myCamera == null) {
             myCamera = getCamera();
             if (myCamera != null) {
                 setStartPreview(myCamera, mHolder);
             }
+        } else {
+            setStartPreview(myCamera, mHolder);
         }
 
         mPreview.setOnClickListener(new View.OnClickListener() {
@@ -190,37 +184,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
             }
         });
 
-
-        if(isAutoLauncher){
-            mClick.setVisibility(View.GONE);
-            myCamera.autoFocus(new Camera.AutoFocusCallback() {
-                @Override
-                public void onAutoFocus(boolean success, Camera camera) {
-                    Log.d(TAG, "success=" + success);
-                    //if (success) {
-                    mTimerPai = new Timer();
-                    mTimerPai.schedule(new TimerTask() {
-                        @Override
-                        public void run() {
-                            Log.d(TAG, "isAutoLauncher mTimerPai");
-                            //对焦后拍照
-                            try {
-                                myCamera.takePicture(null, null, myPicCallback);
-                            } catch (Exception e) {
-
-                                Intent intent = new Intent(getApplicationContext(),SelectActivity.class);
-                                intent.putExtra("AUTO_LAUNCHER",true);
-                                startActivity(intent);
-                                finish();
-
-                                Log.d(TAG, "isAutoLauncher takePicture" + e.toString());
-                            }
-                        }
-                    }, 2000, 4000);
-                }
-            });
-        }
-
         mSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -229,7 +192,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
                 finish();
             }
         });
-
 
         mClick.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -250,19 +212,7 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
                                     myCamera.takePicture(null, null, myPicCallback);
                                 } catch (Exception e) {
 
-                                    Intent intent = new Intent(getApplicationContext(),SelectActivity.class);
-                                    intent.putExtra("AUTO_LAUNCHER",true);
-                                    startActivity(intent);
-                                    finish();
-
-                                    /*releaseCamera();
-
-                                    if (myCamera == null) {
-                                        myCamera = getCamera();
-                                        if (myCamera != null) {
-                                            setStartPreview(myCamera, mHolder);
-                                        }
-                                    }*/
+                                    mDataHander.sendEmptyMessage(0);
 
                                     Log.d(TAG, "takePicture" + e.toString());
 
@@ -275,18 +225,6 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
             }
         });
 
-       /* mRation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (degree == 270) {
-                    degree = 0;
-                } else {
-                    degree += 90;
-                }
-                setStartPreview(myCamera, mHolder);
-                //preview.setCamera(myCamera, degree);
-            }
-        });*/
 
         mTimerDate = new Timer();
         mTimerDate.schedule(new TimerTask() {
@@ -316,31 +254,23 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
                 }
                 //保存图片到sdcard
                 if (null != b) {
-                    FileUtil.saveBitmap(b);
+                    Bitmap bitmap = drawTextToBitmap(getApplicationContext(), b, getStringDate());
+                    FileUtil.saveBitmap(bitmap);
                     File pictureFile = new File(PHOTO_DIR.getPath(), "camera.jpg");
                     if (!pictureFile.exists()) {
                         pictureFile.createNewFile();
                     }
+
                     if (data.length / 1024 > 100) {
-                        Bitmap bitmap = CameraModule.getInstance().getimage(pictureFile.getPath(), mWidth, mHeight);
+                        bitmap = CameraModule.getInstance().getimage(pictureFile.getPath(), mWidth, mHeight);
+
                         FileUtil.saveBitmap(bitmap);
                     }
                 }
-
                 myCamera.stopPreview();
                 setStartPreview(myCamera, mHolder);
 
             } catch (Exception error) {
-
-                /*myCamera = null;
-                if (myCamera == null) {
-                    myCamera = getCamera();
-                    if (myCamera != null) {
-                        setStartPreview(myCamera, mHolder);
-                    }
-                }*/
-
-                //setStartPreview(myCamera, mHolder);
 
                 Toast.makeText(CameraActivity.this, "拍照失败", Toast.LENGTH_SHORT).show();
                 Log.d("Demo", "保存照片失败" + error.toString());
@@ -349,6 +279,72 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
             }
         }
     };
+
+
+    public static String getStringDate() {
+        Date currentTime = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("MM-dd HH:mm:ss");
+        String dateString = formatter.format(currentTime);
+        return dateString;
+    }
+
+
+    public static Bitmap scaleWithWH(Bitmap src, double w, double h) {
+        if (w == 0 || h == 0 || src == null) {
+            return src;
+        } else {
+            // 记录src的宽高
+            int width = src.getWidth();
+            int height = src.getHeight();
+            // 创建一个matrix容器
+            Matrix matrix = new Matrix();
+            // 计算缩放比例
+            float scaleWidth = (float) (w / width);
+            float scaleHeight = (float) (h / height);
+            // 开始缩放
+            matrix.postScale(scaleWidth, scaleHeight);
+            // 创建缩放后的图片
+            return Bitmap.createBitmap(src, 0, 0, width, height, matrix, true);
+        }
+    }
+
+    public Bitmap drawTextToBitmap(Context gContext,
+                                   Bitmap bitmap2,
+                                   String gText) {
+        Resources resources = gContext.getResources();
+        float scale = resources.getDisplayMetrics().density;
+        Bitmap bitmap = bitmap2;
+
+        //bitmap = scaleWithWH(bitmap, bitmap.getWidth() / scale, bitmap.getHeight() / scale);
+        Log.d(TAG, "bitmap=" + " scale=" + scale + " : " + bitmap.getWidth() + " : " + bitmap.getHeight());
+        android.graphics.Bitmap.Config bitmapConfig =
+                bitmap.getConfig();
+
+        // set default bitmap config if none
+        if (bitmapConfig == null) {
+            bitmapConfig = android.graphics.Bitmap.Config.ARGB_8888;
+        }
+        // resource bitmaps are imutable,
+        // so we need to convert it to mutable one
+        bitmap = bitmap.copy(bitmapConfig, true);
+        Log.d(TAG, "bitmap=" + bitmap.getWidth() + " : " + bitmap.getHeight());
+        Canvas canvas = new Canvas(bitmap);
+        // new antialised Paint
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        // text color - #3D3D3D
+        paint.setColor(Color.RED);
+        paint.setTextSize((int) (14 * scale));
+        paint.setDither(true); //获取跟清晰的图像采样
+        paint.setFilterBitmap(true);//过滤一些
+        Rect bounds = new Rect();
+        paint.getTextBounds(gText, 0, gText.length(), bounds);
+        int x = 30;
+        int y = 30;
+        canvas.drawText(gText, bitmap.getWidth() / 2, y * scale, paint);
+        Log.d(TAG, "bitmap=" + bitmap.getWidth() + " : " + bitmap.getHeight());
+        return bitmap;
+    }
+
 
     private Bitmap bitmap;
     private Handler mShowHandler = new Handler() {
@@ -362,6 +358,19 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
             }
         }
     };
+
+
+    private Handler mDataHander = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            Log.d(TAG, "handleMessage");
+
+            initData();
+
+        }
+    };
+
 
     private Handler mShowTime = new Handler() {
 
@@ -442,34 +451,21 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
     /**
      * 获取camera对象
      */
+    Camera camera;
+
     private Camera getCamera() {
-        Camera camera;
-        if (mIsQian) {
-            camera = Camera.open(1);
-        } else {
-            camera = Camera.open(0);
+
+        if (camera == null) {
+            if (mIsQian) {
+                camera = Camera.open(1);
+            } else {
+                camera = Camera.open(0);
+            }
         }
+
         return camera;
     }
 
-   /* @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (myCamera == null) {
-            myCamera = getCamera();
-            if (myCamera != null) {
-                setStartPreview(myCamera, mHolder);
-            }
-        }
-    }*/
-
-  /*  @Override
-    protected void onPause() {
-        super.onPause();
-        releaseCamera();
-
-    }*/
 
     /**
      * 开始预览相机内容
@@ -493,12 +489,28 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
      * 释放相机资源
      */
     private void releaseCamera() {
-        if (myCamera != null) {
-            myCamera.setPreviewCallback(null);
-            myCamera.stopPreview();
-            myCamera.release();
-            myCamera = null;
+        try{
+            if (myCamera != null) {
+                myCamera.setPreviewCallback(null);
+                myCamera.stopPreview();
+                myCamera.release();
+                myCamera = null;
+            }
+        }catch (Exception e){
+            Log.d(TAG,e.toString());
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
     }
 
     @Override
@@ -509,30 +521,32 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        Camera.Parameters parameters = myCamera.getParameters();
-        parameters.setPictureFormat(ImageFormat.JPEG);
 
-        Log.d(TAG, parameters.getPictureFormat() + "");
+        try{
+            Camera.Parameters parameters = myCamera.getParameters();
+            parameters.setPictureFormat(ImageFormat.JPEG);
 
-        List<Camera.Size> supportedPreviewSizes = parameters.getSupportedPreviewSizes();
-        List<Camera.Size> supportedPictureSizes = parameters.getSupportedPictureSizes();
-        List<String> focusModes = parameters.getSupportedFocusModes();
+            Log.d(TAG, parameters.getPictureFormat() + "");
 
-        for (int i = 0; i < supportedPreviewSizes.size(); i++) {
-            Log.d(TAG, "surfaceChanged supportedPreviewSizes=" + supportedPreviewSizes.size() + " width=" + supportedPreviewSizes.get(i).width + " height=" + supportedPreviewSizes.get(i).height);
-        }
+            List<Camera.Size> supportedPreviewSizes = parameters.getSupportedPreviewSizes();
+            List<Camera.Size> supportedPictureSizes = parameters.getSupportedPictureSizes();
+            List<String> focusModes = parameters.getSupportedFocusModes();
 
-        for (int i = 0; i < supportedPictureSizes.size(); i++) {
-            Log.d(TAG, "surfaceChanged supportedPictureSizes=" + supportedPictureSizes.size() + " width=" + supportedPictureSizes.get(i).width + " height=" + supportedPictureSizes.get(i).height);
-        }
+            for (int i = 0; i < supportedPreviewSizes.size(); i++) {
+                Log.d(TAG, "surfaceChanged supportedPreviewSizes=" + supportedPreviewSizes.size() + " width=" + supportedPreviewSizes.get(i).width + " height=" + supportedPreviewSizes.get(i).height);
+            }
 
-        for (int i = 0; i < focusModes.size(); i++) {
-            Log.d(TAG, "surfaceChanged focusModes=" + focusModes.get(i));
-        }
+            for (int i = 0; i < supportedPictureSizes.size(); i++) {
+                Log.d(TAG, "surfaceChanged supportedPictureSizes=" + supportedPictureSizes.size() + " width=" + supportedPictureSizes.get(i).width + " height=" + supportedPictureSizes.get(i).height);
+            }
 
-        //parameters.setPreviewSize(640, 480);
+            for (int i = 0; i < focusModes.size(); i++) {
+                Log.d(TAG, "surfaceChanged focusModes=" + focusModes.get(i));
+            }
 
-        //parameters.setPictureSize(640, 480);
+            //parameters.setPreviewSize(640, 480);
+
+            //parameters.setPictureSize(640, 480);
 
        /* float previewRate = DisplayUtil.getScreenRate(this); //默认全屏的比例预览
 
@@ -551,17 +565,20 @@ public class CameraActivity extends Activity implements SurfaceHolder.Callback {
         Log.d(TAG, "surfaceChanged previewSize="+previewSize.width + " : " + previewSize.height);*/
 
 
-        //List<String> focusModes = parameters.getSupportedFocusModes();
-        //设置自动对焦功能
-        if (focusModes.contains("auto")) {
-            parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+            //List<String> focusModes = parameters.getSupportedFocusModes();
+            //设置自动对焦功能
+            if (focusModes.contains("auto")) {
+                parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+            }
+            //parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+
+            // myCamera.setParameters(parameters);
+
+            setStartPreview(myCamera, mHolder);
+        }catch (Exception e){
+            finish();
+            Log.d(TAG,e.toString());
         }
-        //parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
-
-       // myCamera.setParameters(parameters);
-
-        myCamera.stopPreview();
-        setStartPreview(myCamera, mHolder);
     }
 
     @Override

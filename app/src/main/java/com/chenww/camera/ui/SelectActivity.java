@@ -13,7 +13,7 @@ public class SelectActivity extends Activity implements View.OnClickListener {
 
     private Button mBeiJingQian, mNanJingQian, mBeiJingHou, mNanJingHou;
 
-    private String mode_1 = "mode_1",mode_2 = "mode_2",mode_3 = "mode_3",mode_4 = "mode_4";
+    private String mode_1 = "mode_1", mode_2 = "mode_2", mode_3 = "mode_3", mode_4 = "mode_4";
     //SharedPreferences sharedPreferences;
     private String mode;
     private boolean isAutoLauncher;
@@ -23,7 +23,7 @@ public class SelectActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
 
-        isAutoLauncher = getIntent().getBooleanExtra("AUTO_LAUNCHER",false);
+        isAutoLauncher = getIntent().getBooleanExtra("AUTO_LAUNCHER", false);
 
         mBeiJingQian = (Button) findViewById(R.id.tv_beijing_qian);
         mNanJingQian = (Button) findViewById(R.id.tv_nanjing_qian);
@@ -38,37 +38,33 @@ public class SelectActivity extends Activity implements View.OnClickListener {
         mode = SPManager.getInstance().getMode();
         //ToastUtil.showToast(getApplicationContext(),mode+"");
 
-        if(!TextUtils.isEmpty(mode)){
+        if (!TextUtils.isEmpty(mode)) {
             Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
-            intent.putExtra("AUTO_LAUNCHER",isAutoLauncher);
-            if(mode.equals(mode_1)){
+            //intent.putExtra("AUTO_LAUNCHER", isAutoLauncher);
+            if (mode.equals(mode_1)) {
                 intent.putExtra("downUrl", "http://115.28.43.225:8080/download/MonitorPic_a.png");
                 intent.putExtra("uploadSign", "b");
                 intent.putExtra("isQian", true);
 
-            }else if(mode.equals(mode_2)){
+            } else if (mode.equals(mode_2)) {
                 intent.putExtra("downUrl", "http://115.28.43.225:8080/download/MonitorPic_b.png");
                 intent.putExtra("uploadSign", "a");
                 intent.putExtra("isQian", true);
 
-            }else if(mode.equals(mode_3)){
+            } else if (mode.equals(mode_3)) {
                 intent.putExtra("downUrl", "http://115.28.43.225:8080/download/MonitorPic_a.png");
                 intent.putExtra("uploadSign", "b");
                 intent.putExtra("isQian", false);
 
-            }else if(mode.equals(mode_4)){
+            } else if (mode.equals(mode_4)) {
                 intent.putExtra("downUrl", "http://115.28.43.225:8080/download/MonitorPic_b.png");
                 intent.putExtra("uploadSign", "a");
                 intent.putExtra("isQian", false);
 
             }
-            try {
-                Thread.sleep(2000);
-                startActivity(intent);
-                finish();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
+            startActivity(intent);
+            finish();
 
         }
     }
